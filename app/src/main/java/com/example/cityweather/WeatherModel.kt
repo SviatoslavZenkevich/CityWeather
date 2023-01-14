@@ -1,9 +1,10 @@
 package com.example.cityweather
 
-data class DayItem(
+data class WeatherModel(
     val city: String,
     val date: String,
     val condition: String,
     val imageUrl: String,
+    val currentTemp: String,
 
 )
