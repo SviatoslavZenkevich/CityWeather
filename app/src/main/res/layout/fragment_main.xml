@@ -2,94 +2,114 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MainFragment" >
+    tools:context=".fragment.WeatherFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="4sp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Minsk, BY" />
+
+    <ImageButton
+        android:id="@+id/ibCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.83dp"
+        android:layout_marginEnd="14dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctlCurrentWeather"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/rcvWeatherForecast"
+        app:layout_constraintTop_toBottomOf="@id/tvCity">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="18sp"
+            android:textColor="#6F6F6F"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="01 Aug 2021" />
+
+        <ImageView
+            android:id="@+id/imWeather"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCurrentTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:fontFeatureSettings="pnm, enum"
+            android:gravity="center_horizontal|center_vertical"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="-27sp"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="@+id/imWeather"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="@+id/imWeather"
+            app:layout_constraintTop_toBottomOf="@+id/imWeather"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/tvCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentTemp"
+            android:letterSpacing="0.04"
+            android:textSize="12sp"
+            android:fontFeatureSettings="pnm, enum"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="18sp"
+            tools:text="Sunny"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvWeatherForecast"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="129dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="400dp">
-
-            <TextView
-                android:id="@+id/tvCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Minsk, BY"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="01 Jan 2023"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/tvCity"
-                app:layout_constraintTop_toBottomOf="@+id/tvCity" />
-
-            <ImageView
-                android:id="@+id/imWeather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="54dp"
-                android:layout_marginBottom="27dp"
-                android:src="@drawable/ic_launcher_foreground"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.134" />
-
-            <TextView
-                android:id="@+id/tvCurrentTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="30º"
-                android:textSize="60sp"
-                app:layout_constraintEnd_toEndOf="@+id/imWeather"
-                app:layout_constraintStart_toStartOf="@+id/imWeather"
-                app:layout_constraintTop_toBottomOf="@+id/imWeather" />
-
-            <TextView
-                android:id="@+id/tvCondition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Sunny"
-                app:layout_constraintEnd_toEndOf="@+id/tvCurrentTemp"
-                app:layout_constraintStart_toStartOf="@+id/tvCurrentTemp"
-                app:layout_constraintTop_toBottomOf="@+id/tvCurrentTemp" />
-
-            <ImageButton
-                android:id="@+id/ibCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@null"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_baseline_add_circle_outline_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+        tools:listitem="@layout/list_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
