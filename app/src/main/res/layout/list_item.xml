@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="65dp"
-    android:layout_height="96.91dp"
+    android:layout_width="70dp"
+    android:layout_height="100dp"
     android:layout_margin="10dp">
 
     <TextView
-        android:id="@+id/txtCurDate"
+        android:id="@+id/tvForDate"
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:fontFeatureSettings="pnm, enum"
@@ -22,7 +22,7 @@
         tools:text="02.08.2021" />
 
     <ImageView
-        android:id="@+id/imWeather"
+        android:id="@+id/imForWeather"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="18dp"
@@ -32,7 +32,7 @@
         tools:src="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/tvCurrentTemp"
+        android:id="@+id/tvForTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
@@ -44,11 +44,11 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imWeather"
+        app:layout_constraintTop_toTopOf="@id/imForWeather"
         tools:text="25" />
 
     <TextView
-        android:id="@+id/txtWeatherSum"
+        android:id="@+id/tvForCondition"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
@@ -62,7 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvCurrentTemp"
+        app:layout_constraintTop_toTopOf="@+id/tvForTemp"
         app:layout_constraintVertical_bias="0.0"
         tools:text="Sunny" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

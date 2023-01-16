@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.WeatherFragment">
+    tools:context=".Fragments.MainFragment">
 
     <TextView
         android:id="@+id/tvCity"
@@ -33,83 +33,80 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ctlCurrentWeather"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/rcvWeatherForecast"
-        app:layout_constraintTop_toBottomOf="@id/tvCity">
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:letterSpacing="0.04"
-            android:lineSpacingExtra="18sp"
-            android:textColor="#6F6F6F"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="01 Aug 2021" />
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:letterSpacing="0.04"
+        android:lineSpacingExtra="18sp"
+        android:textColor="#6F6F6F"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="01 Aug 2021" />
 
-        <ImageView
-            android:id="@+id/imWeather"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_launcher_foreground"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imWeather"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="124dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvCurrentTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="8dp"
-            android:fontFeatureSettings="pnm, enum"
-            android:gravity="center_horizontal|center_vertical"
-            android:includeFontPadding="false"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="-27sp"
-            android:textColor="@color/black"
-            android:textSize="50sp"
-            app:layout_constraintEnd_toEndOf="@+id/imWeather"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toStartOf="@+id/imWeather"
-            app:layout_constraintTop_toBottomOf="@+id/imWeather"
-            tools:text="30" />
+    <TextView
+        android:id="@+id/tvCurrentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:fontFeatureSettings="pnm, enum"
+        android:gravity="center_horizontal|center_vertical"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="-27sp"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/imWeather"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/imWeather"
+        app:layout_constraintTop_toBottomOf="@+id/imWeather"
+        tools:text="30" />
 
-        <TextView
-            android:id="@+id/tvCondition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCurrentTemp"
-            android:letterSpacing="0.04"
-            android:textSize="12sp"
-            android:fontFeatureSettings="pnm, enum"
-            android:textColor="@color/black"
-            android:lineSpacingExtra="18sp"
-            tools:text="Sunny"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFeatureSettings="pnm, enum"
+        android:letterSpacing="0.04"
+        android:lineSpacingExtra="18sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentTemp"
+        tools:text="Sunny" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvWeatherForecast"
-        android:layout_width="318dp"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="129dp"
+        android:layout_marginBottom="130dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/list_item"/>
+        tools:itemCount="4"
+        tools:listitem="@layout/list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
